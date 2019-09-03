@@ -1,0 +1,38 @@
+Op          Nemonic       Data
+----------------------------------------------
+0NNN         SYS          addr
+00E0         CLS 
+00EE         RET 
+1NNN         JMP          addr
+2NNN         CALL         addr
+3XKK         SE           Vx, byte
+4XKK         SNE          Vx, byte
+5XY0         SE           Vx, Vy
+6XKK         MOV          Vx, byte
+7XKK         ADD          Vx, byte
+8XY0         MOV          Vx, Vy
+8XY1         OR           Vx, Vy
+8XY2         AND          Vx, Vy
+8XY3         XOR          Vx, Vy
+8XY4         ADD          Vx, Vy
+8XY5         SUB          Vx, Vy
+8XY6         SHR          Vx {, Vy}
+8XY7         SUBN         Vx, Vy
+8XYE         SHL          Vx {, Vy}
+9XY0         SNE          Vx, Vy
+ANNN         MOV          I, addr
+BNNN         JMP          V0, addr
+CXKK         RND          Vx, byte
+DXYN         DRW          Vx, Vy, nibble
+EX9E         SKP          Vx
+EXA1         SKNP         Vx
+FX07         MOV          VX, DELAY    
+FX0A         WAITKEY      VX    
+FX15         MOV          DELAY, VX    
+FX18         MOV          SOUND, VX    
+FX1E         ADD          I, VX    
+FX29         SPRITE       VX    
+FX33         MOVBCD       VX    
+FX55         MOVM         (I), V0-VX    
+FX65         MOVM         V0-VX, (I)  
+---------------------------------------------- 
