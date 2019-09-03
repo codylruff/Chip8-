@@ -5,11 +5,15 @@
 #define startAddr 0x0200
 
 class chip8{
+public:
+    chip8();
+    ~chip8();
 private:
     std::vector<uint8_t> Memory;
     std::vector<uint8_t> V; // 16 8-bit registers V0-F
     std::vector<uint16_t> sprites;
     uint16_t endAddr; // usually 0xFFF
+    uint16_t lastAddr;
     uint16_t I;
     uint16_t PC;
     uint8_t soundTimer;
@@ -21,9 +25,11 @@ private:
         char OpId;
         uint16_t NNN;
         uint8_t KK;
-        char X, Y, N;
+        char N;
+        char X;
+        char Y;
     };
-    typedef void (chip8::*operation)(INSTRUCTION data);
+    typedef void *(operation)(INSTRUCTION* data);
     std::map<char,operation> operations;
 private:
     void LoadOperations();

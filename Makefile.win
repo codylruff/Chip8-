@@ -1,4 +1,4 @@
-# Project: chip8
+# Project: ChipAteMyLunch
 
 CPP      = g++.exe
 CC       = gcc.exe
@@ -6,8 +6,8 @@ WINDRES  = windres.exe
 OBJ      = src/main.o src/chip8.o
 LINKOBJ  = src/main.o src/chip8.o
 LIBS     = -L"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/lib" -L"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
-INCS     = -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/include" -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Users/cruff/Documents/Projects/source/chip8/inc"
-CXXINCS  = -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/include" -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++" -I"C:/Users/cruff/Documents/Projects/source/chip8/inc"
+INCS     = -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/include" -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Users/cruff/Documents/Projects/source/chip8/ChipAteMyLunch/inc"
+CXXINCS  = -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/include" -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Users/cruff/Downloads/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++" -I"C:/Users/cruff/Documents/Projects/source/chip8/ChipAteMyLunch/inc"
 BIN      = bin/chip8.exe
 CXXFLAGS = $(CXXINCS) 
 CFLAGS   = $(INCS) 

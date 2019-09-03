@@ -33,7 +33,7 @@ void chip8::LoadRom(const std::vector<uint8_t> romData)
     PC = startAddr;
     endAddr = sizeof(romData);
     // Load romdata into memory before execution
-    for (uint16_t a = startAddr; a < endAddrw; a++)
+    for (uint16_t a = startAddr; a < endAddr; a++)
     {
         std::cout << romData[a] << std::endl;
         Memory[a] = romData[a];
@@ -61,26 +61,25 @@ void chip8::LoadOperations()
 }
 void chip8::ExecuteCpuCycle(uint16_t opCode)
 {
-    chip8::INSTRUCTION* data = new INSTRUCTION()
-    {
-        OpCode = opCode,
-        OpId = opCode & 0xF000 >> 0xC,
-        NNN = opCode & 0x0FFF,
-        NN = opCode & 0x00FF,
-        N = opCode & 0x000F,
-        X = opCode & 0x0F00 >> 8),
-        Y = opCode & 0x00F0 >> 4)
+    chip8::INSTRUCTION data = {
+        opCode, // OpCode
+        opCode & 0xF000 >> 0xC, // OpId
+        opCode & 0x0FFF, // NNN
+        opCode & 0x00FF, // KK
+        opCode & 0x000F, // N
+        opCode & 0x0F00 >> 8, // X
+        opCode & 0x00F0 >> 4, // Y
     };
-    // Look up the OpCode using the first nibble and execute.
+    // Look up the OpCode using  the first nibble and execute.
 
-    void (*operation)(INSTRUCTION data) = operations[data.OpId];
-    operation(data);
+    operations[&data->OpId](&data);
 }
 void chip8::Execute_Subroutine(uint16_t addr)
 {
     // TODO: Implement subroutine functionality
     // push current address on stack
-    Stack.Push(PC);
+    //Stack.Push(PC);
+    lastAddr = PC;
     ExecuteOpCode(Memory[addr]);
 }
 void chip8::Execute_ClearScreen()
@@ -91,7 +90,7 @@ void chip8::Execute_ReturnFromSubroutine()
 {
     // 00EE	Return from a subroutine
     // TODO: Execute address at top of stack
-    PC = NULL
+    PC = lastAddr;
 }
 void chip8::ClearOrReturn(INSTRUCTION data)
 {
