@@ -42,7 +42,9 @@ void chip8::LoadRom(const std::vector<uint8_t> romData)
 }
 void chip8::LoadOperations()
 {
-    operations[0x0] = &chip8::ClearOrReturn;
+    
+    switch(opCode){
+    0x0: chip8::ClearOrReturn,
     operations[0x1] = &chip8::Jump;
     operations[0x2] = &chip8::CallSubroutine;
     operations[0x3] = &chip8::SkipIfXEqual;
