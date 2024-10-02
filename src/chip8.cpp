@@ -76,6 +76,11 @@ void chip8::ExecuteCpuCycle(uint16_t opCode)
 
     operations[&data->OpId](&data);
 }
+
+void ExecuteOpCode(uint16_t opCode){
+    // todo implement function. change to return error codes.
+}
+
 void chip8::Execute_Subroutine(uint16_t addr)
 {
     // TODO: Implement subroutine functionality
