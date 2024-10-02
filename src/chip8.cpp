@@ -28,7 +28,7 @@ void chip8::StartEmulation()
         PC += 2;
     }
 }
-void chip8::LoadRom(const std::vector<uint8_t> romData)
+void chip8::LoadRom(const std::vector<uint8_t>& romData)
 {
     PC = startAddr;
     endAddr = sizeof(romData);
